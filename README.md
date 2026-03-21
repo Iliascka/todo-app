@@ -1,17 +1,17 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+A simple task management app that lets users add, complete, and remove todo items through a clean interface.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+Users can create new todo items, mark tasks as completed and delete tasks.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+This project uses HTML, CSS and JavaScript with OOP modules and form validation.
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+- https://iliascka.github.io/se_project_todo-app/
