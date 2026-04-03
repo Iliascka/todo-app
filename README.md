@@ -14,4 +14,4 @@ This project uses HTML, CSS and JavaScript with OOP modules and form validation.
 
 This project is deployed on GitHub Pages:
 
-- https://iliascka.github.io/se_project_todo-app/
+- https://iliascka.github.io/todo-app/
