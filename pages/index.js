@@ -3,7 +3,7 @@ import { initialTodos, validationConfig } from "../utils/constant.js";
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
-import PopUpWithForm from "../components/PopUpWithForm.js";
+import PopupWithForm from "../components/PopupWithForm.js";
 import TodoCounter from "../components/TodoCounter.js";
 
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
@@ -12,26 +12,31 @@ const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopupEl = document.querySelector("#add-todo-popup");
 const addTodoForm = addTodoPopupEl.querySelector(".popup__form");
 
-function toDoCheck(completed) {
+function handleTodoCheck(completed) {
   todoCounter.updateCompleted(completed);
 }
 
-function toDoDelete(completed) {
+function handleTodoDelete(completed) {
   if (completed) {
     todoCounter.updateCompleted(false);
   }
 }
 
-function toDoAddTotal() {
+function incrementTotal() {
   todoCounter.updateTotal(true);
 }
 
-function toDoDeleteTotal() {
+function decrementTotal() {
   todoCounter.updateTotal(false);
 }
 
-const addTodoPopup = new PopUpWithForm({
-  popUpSelector: "#add-todo-popup",
+const renderTodo = (item) => {
+  const todoElement = generateTodo(item);
+  section.addItem(todoElement);
+};
+
+const addTodoPopup = new PopupWithForm({
+  popupSelector: "#add-todo-popup",
   handleFormSubmit: (inputValues) => {
     const name = inputValues.name;
     const dateInput = inputValues.date;
@@ -40,8 +45,8 @@ const addTodoPopup = new PopUpWithForm({
     date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
     const id = uuidv4();
     const values = { name, date, id };
-    section.addItem(generateTodo(values));
-    toDoAddTotal();
+    renderTodo(values);
+    incrementTotal();
 
     newTodoValidator.resetValidation();
     addTodoPopup.close();
@@ -52,8 +57,7 @@ addTodoPopup.setEventListeners();
 const section = new Section({
   items: initialTodos,
   renderer: (item) => {
-    const todo = generateTodo(item);
-    section.addItem(todo);
+    renderTodo(item);
   },
   containerSelector: ".todos__list",
 });
@@ -62,9 +66,9 @@ const generateTodo = (data) => {
   const todo = new Todo(
     data,
     "#todo-template",
-    toDoCheck,
-    toDoDelete,
-    toDoDeleteTotal,
+    handleTodoCheck,
+    handleTodoDelete,
+    decrementTotal,
   );
   const todoElement = todo.getView();
   return todoElement;
