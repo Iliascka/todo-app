@@ -4,7 +4,7 @@ A simple task management app that lets users add, complete, and remove todo item
 
 ## Functionality
 
-Users can create new todo items, mark tasks as completed and delete tasks.
+Users can create, complete, and delete todo items with real-time updates using a component-based structure.
 
 ## Technology
 
