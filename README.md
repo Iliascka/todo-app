@@ -15,3 +15,8 @@ This project uses HTML, CSS and JavaScript with OOP modules and form validation.
 This project is deployed on GitHub Pages:
 
 - https://iliascka.github.io/todo-app/
+
+## Project Preview
+
+![Homepage & Recipes](https://github.com/user-attachments/assets/5c26f15c-412d-4c96-82fe-ff365ca56979)
+
