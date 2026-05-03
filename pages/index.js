@@ -1,6 +1,6 @@
 console.log("Loaded");
 
-// import { v4 as uuidv4 } from "https://jspm.dev/uuid";
+import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 import { initialTodos, validationConfig } from "../utils/constant.js";
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
@@ -45,7 +45,7 @@ const addTodoPopup = new PopupWithForm({
 
     const date = new Date(dateInput);
     date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
-    const id = "identity";
+    const id = uuidv4();
     const values = { name, date, id };
     renderTodo(values);
     incrementTotal();
