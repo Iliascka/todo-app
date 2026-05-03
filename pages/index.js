@@ -4,7 +4,7 @@ import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
-import TodoCounter from "../components/TodoCounter.js";
+// import TodoCounter from "../components/TodoCounter.js";
 
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
