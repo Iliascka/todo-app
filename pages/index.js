@@ -1,10 +1,10 @@
-import { v4 as uuidv4 } from "https://jspm.dev/uuid";
+// import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 import { initialTodos, validationConfig } from "../utils/constant.js";
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
-// import TodoCounter from "../components/TodoCounter.js";
+import TodoCounter from "../components/TodoCounter.js";
 
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
@@ -43,7 +43,7 @@ const addTodoPopup = new PopupWithForm({
 
     const date = new Date(dateInput);
     date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
-    const id = uuidv4();
+    const id = "identity";
     const values = { name, date, id };
     renderTodo(values);
     incrementTotal();
